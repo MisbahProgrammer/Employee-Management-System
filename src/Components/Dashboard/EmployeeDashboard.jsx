@@ -6,10 +6,11 @@ import TaskMessage from "../TaskList/TaskMessage";
 function EmployeeDashboard() {
   return (
     <>
+    <div className="">
       <Header/>
       <Tasks/>
       <TaskMessage/>
-      
+      </div>
       
     </>
   );
