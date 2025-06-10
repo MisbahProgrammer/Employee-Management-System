@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const CreateTask = () => {
+const CreateTask = ({setTasks}) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [date, setDate] = useState('');
@@ -9,8 +9,15 @@ const CreateTask = () => {
 
   const Submithandle = (e) => {
     e.preventDefault();
-    const newTask = [title, description, date, assign, category];
+    const newTask = {title, description, date, assign, category};
     console.log(newTask);
+    setTasks((prev) => [...prev, newTask])
+    //clear form;
+    setTitle('');
+    setDescription('');
+    setDate('');
+    setAssign('');
+    setCategory('');
   };
 
   return (
