@@ -1,3 +1,8 @@
+This project will be a Management System in which a employer can create tasks for the employees. This project will also includes Login forms , progress charts , employee management and many more features but will be came in different versions, V1 will be very simple, then next version will add new features.
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
