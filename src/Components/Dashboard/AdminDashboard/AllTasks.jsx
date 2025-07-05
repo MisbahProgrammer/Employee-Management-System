@@ -3,6 +3,14 @@ import React from 'react';
 const AllTasks = ({tasks = []}) => {
   return (
     <div className="p-4 max-h-[500px] overflow-auto no-scrollbar">
+       {/* Table Header */}
+      <div className="flex justify-between items-center bg-slate-100 text-slate-800 font-semibold p-3 rounded-md mb-3 shadow-sm">
+        <p className="w-1/5">Assigned To</p>
+        <p className="w-1/4">Title</p>
+        <p className="w-1/6">Category</p>
+        <p className="w-1/6">Deadline</p>
+        <p className="w-1/6">Status</p>
+      </div>
       {tasks.map((tsk, index) => (
         <div
           key={tsk.id || index}
