@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import './../../App.css'
-function Login() {
+function Login({LoginHandler}) {
+  
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
    const Submitter = (e) =>{
       e.preventDefault()
-    console.log('Email is' ,email);
-    console.log('Password is', password);
+      LoginHandler(email,password)
     setEmail("")
     setPassword("")
     
