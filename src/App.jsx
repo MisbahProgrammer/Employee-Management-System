@@ -30,6 +30,16 @@ function App() {
   const LoginHandler = (email, password) =>{
     if (email == 'admin@example.com' && password == '123') {
      setUser('admin')
+     const adminData = {
+      id:0,
+      name: 'Misbah',
+      email: '',
+      password: '123',
+      role: 'admin'
+     };
+
+     setLoggedInUserData(adminData)
+     localStorage.setItem('loggedInUser', JSON.stringify(adminData));
       localStorage.setItem('loggedInUser',JSON.stringify({role: 'admin'}))
     }else if(Authdata){
       const employee = Authdata.employees.find((e)=>email ===e.email && e.password === password )
@@ -49,7 +59,7 @@ function App() {
   return (
     <>
     {!User ? <Login LoginHandler={LoginHandler}/> : ''}
-    {User == 'admin' ? <AdminDashboard/> : (User == "employees" ? <EmployeeDashboard data={LoggedInUserData}/> : null) }
+    {User == 'admin' ? <AdminDashboard data={LoggedInUserData} /> : (User == "employees" ? <EmployeeDashboard data={LoggedInUserData}/> : null) }
     </>
   )
 }
